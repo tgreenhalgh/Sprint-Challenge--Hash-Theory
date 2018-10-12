@@ -8,11 +8,8 @@ def get_indices_of_item_weights(weights, limit):
         difference = limit - v
         # have we found this difference already?
         if (check_valid(hashTable, difference)):
-            # sweet, return in proper order
-            if (hashTable[difference] > i):
-                pair = (hashTable[difference], i)
-            else:
-                pair = (i, hashTable[difference])
+            # sweet, return in proper order (i is always bigger because iterating)
+            pair = (i, hashTable[difference])
         # nope, add to the hash table
         hashTable[v] = i
 
